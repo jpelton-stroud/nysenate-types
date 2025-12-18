@@ -25,7 +25,7 @@ declare namespace NYSOpenLegislation {
       billId: ExtendedBillId;
       date: string;
       chamber: "SENATE" | "ASSEMBLY";
-      sequenceNo: 1;
+      sequenceNo: number;
       text: string;
     }
     interface BillInfo extends BillId {
