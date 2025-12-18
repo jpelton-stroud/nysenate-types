@@ -19,7 +19,7 @@ declare namespace NYSOpenLegislation {
       statusDesc: string;
       actionDate: string;
       committeeName: string;
-      billCalNo: null; //TODO: update after doing calendars
+      billCalNo: number;
     }
     interface BillActionItem {
       billId: ExtendedBillId;
