@@ -1,36 +1,36 @@
 declare namespace NYSOpenLegislation {
   namespace Bills {
-    interface BillId {
+    interface ShortId {
       basePrintNo: string;
       session: number;
       basePrintNoStr: string;
     }
-    interface ExtendedBillId extends BillId {
+    interface Id extends ShortId {
       printNo: string;
       version: string;
     }
-    interface BillType {
+    interface Type {
       chamber: "ASSEMBLY" | "SENATE";
       desc: string;
       resolution: boolean;
     }
-    interface BillStatus {
+    interface Status {
       statusType: string;
       statusDesc: string;
       actionDate: string;
       committeeName: string;
       billCalNo: number;
     }
-    interface BillActionItem {
-      billId: ExtendedBillId;
+    interface ActionItem {
+      billId: Id;
       date: string;
       chamber: "SENATE" | "ASSEMBLY";
       sequenceNo: number;
       text: string;
     }
-    interface BillInfo extends BillId {
+    interface Info extends ShortId {
       printNo: string;
-      billType: BillType;
+      billType: Type;
       title: string;
       activeVersion: string;
       publishedDateTime: string;
@@ -46,13 +46,13 @@ declare namespace NYSOpenLegislation {
       signed: boolean;
       adpoted: boolean;
       vetoed: boolean;
-      status: BillStatus;
+      status: Status;
       milestones: {
-        items: BillStatus[];
+        items: Status[];
         size: number;
       };
       actions: {
-        items: BillActionItem[];
+        items: ActionItem[];
         size: number;
       };
       publishStatusMap: {
@@ -67,7 +67,7 @@ declare namespace NYSOpenLegislation {
         programInfo: null; //TODO: find out what this is
       };
     }
-    interface BillAmendment extends BillId {
+    interface Amendment extends ShortId {
       printNo: string;
       version: string;
       publishDate: string;
@@ -98,11 +98,11 @@ declare namespace NYSOpenLegislation {
       };
       stricken: boolean;
     }
-    interface Bill extends BillInfo {
+    interface Bill extends Info {
       year: number;
       amendmentVersions: {
         items: {
-          [key: string]: BillAmendment;
+          [key: string]: Amendment;
           size: number;
         };
         size: number;
@@ -125,7 +125,7 @@ declare namespace NYSOpenLegislation {
         size: number;
       };
       previousVersions: {
-        items: ExtendedBillId[]; //TODO: need examples
+        items: Id[]; //TODO: need examples
         size: number;
       };
       committeeAgendas: {
@@ -138,7 +138,7 @@ declare namespace NYSOpenLegislation {
       };
       billInfoRefs?: {
         items: {
-          [key: string]: BillInfo;
+          [key: string]: Info;
           size: number;
         };
         size: number;

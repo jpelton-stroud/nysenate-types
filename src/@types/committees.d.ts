@@ -1,10 +1,10 @@
 declare namespace NYSOpenLegislation {
   namespace Committees {
-    interface CommitteeMember extends Members.Member {
+    interface Member extends Members.Member {
       sequenceNo: number;
       title: "CHAIR" | "MEMBER";
     }
-    interface CommitteeId {
+    interface Id {
       chamber: "SENATE";
       name: string;
     }
@@ -20,7 +20,7 @@ declare namespace NYSOpenLegislation {
       meetAltWeek: boolean;
       meetAltWeekText: string;
       committeeMembers: {
-        items: CommitteeMember[];
+        items: Member[];
         size: number;
       };
     }

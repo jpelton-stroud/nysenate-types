@@ -1,6 +1,6 @@
 declare namespace NYSOpenLegislation {
   namespace Laws {
-    interface LawDocument {
+    interface Document {
       lawId: string;
       lawName: string;
       locationId: string;
@@ -14,7 +14,7 @@ declare namespace NYSOpenLegislation {
       toSection: string;
       text: string | null;
       documents: {
-        items: LawDocument[];
+        items: Document[];
         size: number;
       };
       repealed: boolean;
@@ -32,7 +32,7 @@ declare namespace NYSOpenLegislation {
       };
       publishedDates: string[];
       documents: {
-        items: LawDocument[];
+        items: Document[];
         size: number;
       }
     }

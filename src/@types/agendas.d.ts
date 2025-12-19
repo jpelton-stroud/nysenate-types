@@ -1,11 +1,11 @@
 declare namespace NYSOpenLegislation {
   namespace Agendas {
-    interface AgendaId {
+    interface Id {
       number: number;
       year: number;
     }
-    interface AgendaSummary {
-      id: AgendaId;
+    interface Summary {
+      id: Id;
       weekOf: string;
       publishedDateTime: string;
       totalAddendum: number;
@@ -14,9 +14,9 @@ declare namespace NYSOpenLegislation {
       totalCommittees: number;
     }
     interface Addendum {
-      agendaId: AgendaId;
+      agendaId: Id;
       addendumId: string;
-      committeeId: Committees.CommitteeId;
+      committeeId: Committees.Id;
       modifiedDateTime: string;
       hasVotes: boolean;
       meeting: {
@@ -28,8 +28,8 @@ declare namespace NYSOpenLegislation {
       bills: {
         items: [
           {
-            billId: Bills.BillId;
-            billInfo: Bills.BillInfo;
+            billId: Bills.ShortId;
+            billInfo: Bills.Info;
             message: string;
           }
         ];
@@ -50,17 +50,17 @@ declare namespace NYSOpenLegislation {
         votesList: {
           items: [
             {
-              bill: Bills.ExtendedBillId;
+              bill: Bills.Id;
               action: string;
               amended: boolean;
               referCommittee: null; //TODO: find out what this is
               vote: {
-                billId: Bills.ExtendedBillId;
+                billId: Bills.Id;
                 version: string;
                 voteType: string;
                 sequenceNo: number;
                 voteDate: string;
-                committee: Committees.CommitteeId;
+                committee: Committees.Id;
                 memberVotes: {
                   items: {
                     [key: string]: {
@@ -84,17 +84,17 @@ declare namespace NYSOpenLegislation {
         };
       };
       committeeAgendaAddendumId: {
-        agendaId: AgendaId;
-        committeeId: Committees.CommitteeId;
+        agendaId: Id;
+        committeeId: Committees.Id;
         addendum: string;
       };
     }
-    interface Agenda extends AgendaSummary {
-      committeeId: Committees.CommitteeId;
+    interface Agenda extends Summary {
+      committeeId: Committees.Id;
       committeeAgendas: {
         items: [
           {
-            committeeId: Committees.CommitteeId;
+            committeeId: Committees.Id;
             addenda: {
               items: Addendum[];
               size: number;
