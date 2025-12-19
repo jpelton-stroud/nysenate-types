@@ -67,7 +67,6 @@ declare namespace NYSOpenLegislation {
                       items: Members.Member[];
                       size: number;
                     };
-                    size: number;
                   };
                   size: number;
                 };
