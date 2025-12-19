@@ -16,7 +16,7 @@ declare namespace NYSOpenLegislation {
     interface Addendum {
       agendaId: Id;
       addendumId: string;
-      committeeId: Committees.Id;
+      committeeId: CommitteeId;
       modifiedDateTime: string;
       hasVotes: boolean;
       meeting: {
@@ -28,8 +28,8 @@ declare namespace NYSOpenLegislation {
       bills: {
         items: [
           {
-            billId: Bills.ShortId;
-            billInfo: Bills.Info;
+            billId: ShortBillId;
+            billInfo: BillInfo;
             message: string;
           }
         ];
@@ -39,7 +39,7 @@ declare namespace NYSOpenLegislation {
         attendanceList: {
           items: [
             {
-              member: Members.Member;
+              member: Member;
               rank: number;
               party: string;
               attend: string;
@@ -50,21 +50,21 @@ declare namespace NYSOpenLegislation {
         votesList: {
           items: [
             {
-              bill: Bills.Id;
+              bill: BillId;
               action: string;
               amended: boolean;
               referCommittee: null; //TODO: find out what this is
               vote: {
-                billId: Bills.Id;
+                billId: BillId;
                 version: string;
                 voteType: string;
                 sequenceNo: number;
                 voteDate: string;
-                committee: Committees.Id;
+                committee: CommitteeId;
                 memberVotes: {
                   items: {
                     [key: string]: {
-                      items: Members.Member[];
+                      items: Member[];
                       size: number;
                     };
                   };
@@ -72,7 +72,7 @@ declare namespace NYSOpenLegislation {
                 };
                 attendance: {
                   remote: {
-                    items: Members.Member[];
+                    items: Member[];
                     size: number;
                   };
                 };
@@ -84,16 +84,16 @@ declare namespace NYSOpenLegislation {
       };
       committeeAgendaAddendumId: {
         agendaId: Id;
-        committeeId: Committees.Id;
+        committeeId: CommitteeId;
         addendum: string;
       };
     }
     interface Agenda extends Summary {
-      committeeId: Committees.Id;
+      committeeId: CommitteeId;
       committeeAgendas: {
         items: [
           {
-            committeeId: Committees.Id;
+            committeeId: CommitteeId;
             addenda: {
               items: Addendum[];
               size: number;
