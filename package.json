@@ -1,6 +1,6 @@
 {
   "name": "nys-openlegislation-types",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Typescript definitions for working with the New York Senate's OpenLegislation API",
   "main": "",
   "types": "index.d.ts",
