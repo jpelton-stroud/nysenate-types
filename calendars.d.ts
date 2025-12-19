@@ -1,59 +1,39 @@
 declare namespace NYSOpenLegislation {
   namespace Calendars {
-    interface FloorCalendarSummary {
+    interface Items<T> {
+      items: T;
+      size: number;
+    }
+    interface Calendar<T> {
+      year: number;
+      calendarNumber: number;
+      floorCalendar: T;
+      supplementalCalendars: Items<T>;
+      activeLists: Items<T>;
+      calDate: string;
+    }
+    interface Short {
       year: number;
       calendarNumber: number;
       version: string;
       calDate: string;
-      releastDateTime: string;
+      releaseDateTime: string;
       totalEntries: number;
     }
-    interface Summary {
-      year: number;
-      calendarNumber: number;
-      floorCalendar: FloorCalendarSummary;
-      supplementalCalendars: {
-        items: {
-          [key: string]: FloorCalendarSummary;
-        };
-        size: number;
-      };
-      activeLists: {
-        items: {
-          [key: string]: {
-            year: number;
-            calendarNumber: number;
-            sequenceNumber: number;
-            calDate: string;
-            releastDateTime: string;
-            notes: string;
-            totalEntries: number;
-          };
-        };
-        size: number;
-      };
-      calDate: string;
-    }
     interface Entry extends Bills.Info {
-      programInfo: null; //TODO: find out what this is
       billCalNo: number;
       selectedVersion: string;
+      sectionType: string;
       subBillInfo: null; //TODO: find out what this is
       billHigh: boolean;
     }
-    interface Calendar extends Summary {
+    interface Full extends Short {
       entriesBySection: {
         items: {
           [key: string]: {
             items: Entry[];
             size: number;
           };
-        };
-        size: number;
-      };
-      supplementalCalendars: {
-        items: {
-          [key: string]: Calendar;
         };
         size: number;
       };

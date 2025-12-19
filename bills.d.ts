@@ -62,10 +62,10 @@ declare namespace NYSOpenLegislation {
             published: boolean;
             effectDateTime: string;
           };
-          size: number;
         };
-        programInfo: null; //TODO: find out what this is
+        size: number;
       };
+      programInfo: null; //TODO: find out what this is
     }
     interface Amendment extends ShortId {
       printNo: string;
@@ -98,12 +98,11 @@ declare namespace NYSOpenLegislation {
       };
       stricken: boolean;
     }
-    interface Bill extends Info {
+    interface Full extends Info {
       year: number;
       amendmentVersions: {
         items: {
           [key: string]: Amendment;
-          size: number;
         };
         size: number;
       };
@@ -139,7 +138,6 @@ declare namespace NYSOpenLegislation {
       billInfoRefs?: {
         items: {
           [key: string]: Info;
-          size: number;
         };
         size: number;
       };
