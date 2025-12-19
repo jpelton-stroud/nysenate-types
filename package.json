@@ -1,35 +1,9 @@
 {
   "name": "nys-openlegislation-types",
   "version": "0.1.0",
-  "description": "Typescript definitions for working with the New York Senate's OpenLegislation API ",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "dependencies": {
-    "node-fetch": "latest"
-  },
-  "devDependencies": {
-    "@types/node-fetch": "latest",
-    "typescript": "4.x"
-  },
-  "scripts": {
-    "build": "npx tsc && node dist/index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jpelton-stroud/NYS-OpenLegislation-Types.git"
-  },
-  "keywords": [
-    "nysenate",
-    "openlegislation",
-    "typescript",
-    "types",
-    "new york",
-    "legislature"
-  ],
-  "author": "jpelton-stroud",
-  "license": "LGPL-3.0-or-later",
-  "bugs": {
-    "url": "https://github.com/jpelton-stroud/NYS-OpenLegislation-Types/issues"
-  },
-  "homepage": "https://github.com/jpelton-stroud/NYS-OpenLegislation-Types#readme"
+  "main": "",
+  "types": "index.d.ts",
+  "files": [
+    "*.d.ts"
+  ]
 }
