@@ -83,11 +83,11 @@ declare namespace NYSOpenLegislation {
     fullTextHtml: string;
     fullTextTemplate: string;
     coSponsors: {
-      items: SessionMember[];
+      items: Member[];
       size: number;
     };
     multiSponsors: {
-      items: SessionMember[];
+      items: Member[];
       size: number;
     };
     uniBill: boolean;
@@ -100,6 +100,10 @@ declare namespace NYSOpenLegislation {
   interface Bill extends BillInfo {
     year: number;
     amendmentVersions: {
+      items: string[];
+      size: number;
+    };
+    amendments: {
       items: {
         [key: string]: BillAmendment;
       };
