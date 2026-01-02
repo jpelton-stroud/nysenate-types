@@ -129,7 +129,7 @@ export interface Bill extends BillInfo {
     size: number;
   };
   previousVersions: {
-    items: BillId[]; //TODO: need examples
+    items: BillId[];
     size: number;
   };
   committeeAgendas: {
