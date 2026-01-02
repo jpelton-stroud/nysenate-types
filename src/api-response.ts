@@ -1,5 +1,5 @@
 export type Items<T> = {
-  items: T;
+  items: T[];
   size: number;
 };
 
