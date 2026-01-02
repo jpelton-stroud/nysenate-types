@@ -4,10 +4,12 @@ export interface CommitteeMember extends Member {
   sequenceNo: number;
   title: "CHAIR" | "MEMBER";
 }
+
 export type CommitteeId = {
   chamber: "SENATE";
   name: string;
 };
+
 export type Committee = {
   chamber: "SENATE";
   name: string;
