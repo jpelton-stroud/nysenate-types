@@ -1,15 +1,42 @@
 {
-  "name": "nys-openlegislation-types",
+  "name": "@jpstroud/nys-openlegislation-types",
   "version": "0.2.4",
   "description": "Typescript definitions for working with the New York Senate's OpenLegislation API",
-  "main": "",
-  "types": "index.d.ts",
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jpelton-stroud/nysenate-types.git"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "types": "./dist/index.d.ts",
   "files": [
-    "*.d.ts",
+    "dist",
     "README.md",
     "LICENSE"
   ],
   "scripts": {
-    "test": "npx tsc"
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "private": false,
+  "keywords": [
+    "nys",
+    "nysenate",
+    "openlegislation",
+    "types"
+  ],
+  "author": "jpstroud",
+  "license": "ISC",
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "semantic-release": "^25.0.2"
   }
 }
