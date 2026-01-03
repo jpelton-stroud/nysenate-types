@@ -1,6 +1,6 @@
 {
   "name": "@jpstroud/nys-openlegislation-types",
-  "version": "0.2.4",
+  "version": "1.0.0",
   "description": "Typescript definitions for working with the New York Senate's OpenLegislation API",
   "type": "module",
   "publishConfig": {
