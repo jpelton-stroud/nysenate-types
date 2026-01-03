@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/jpelton-stroud/nysenate-types/compare/v1.0.0...v1.0.1) (2026-01-03)
+
+
+### Bug Fixes
+
+* Items<T> is always an array resonse ([3128908](https://github.com/jpelton-stroud/nysenate-types/commit/3128908c91247cf3e4206becdfdff315c4cd11a3))
+
 # 1.0.0 (2026-01-02)
 
 
