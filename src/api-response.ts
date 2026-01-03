@@ -1,7 +1,4 @@
-export type Items<T> = {
-  items: T[];
-  size: number;
-};
+import { Items } from "./common.js";
 
 export type APIBaseResponse = {
   success: boolean;

@@ -1,4 +1,4 @@
-import { Items } from "./api-response.js";
+import { Items } from "./common.js";
 import { BillInfo } from "./bills.js";
 
 export type Calendar<T> = {

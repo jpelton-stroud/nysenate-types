@@ -1,3 +1,4 @@
+import { Items } from "./common.js";
 import { Member } from "./members.js";
 
 export interface CommitteeMember extends Member {
@@ -21,8 +22,5 @@ export type Committee = {
   meetTime: string;
   meetAltWeek: boolean;
   meetAltWeekText: string;
-  committeeMembers: {
-    items: CommitteeMember[];
-    size: number;
-  };
+  committeeMembers: Items<CommitteeMember>;
 };

@@ -1,3 +1,5 @@
+import { Items } from "./common.js";
+
 export type LawDocument = {
   lawId: string;
   lawName: string;
@@ -11,10 +13,7 @@ export type LawDocument = {
   fromSection: string;
   toSection: string;
   text: string | null;
-  documents: {
-    items: LawDocument[];
-    size: number;
-  };
+  documents: Items<LawDocument>;
   repealed: boolean;
 };
 export type Law = {
@@ -29,8 +28,5 @@ export type Law = {
     chapter: string;
   };
   publishedDates: string[];
-  documents: {
-    items: LawDocument[];
-    size: number;
-  };
+  documents: Items<LawDocument>;
 };

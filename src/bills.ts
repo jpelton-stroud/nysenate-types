@@ -1,5 +1,6 @@
 import { Member, SessionMember } from "./members.js";
 import { Committee } from "./committees.js";
+import { Items } from "./common.js";
 
 export type ShortBillId = {
   basePrintNo: string;
@@ -84,14 +85,8 @@ export interface BillAmendment extends ShortBillId {
   fullText?: string;
   fullTextHtml: string;
   fullTextTemplate: string;
-  coSponsors: {
-    items: Member[];
-    size: number;
-  };
-  multiSponsors: {
-    items: Member[];
-    size: number;
-  };
+  coSponsors: Items<Member>;
+  multiSponsors: Items<Member>;
   uniBill: boolean;
   relatedLaws: {
     items: {}; //TODO: need examples
@@ -101,10 +96,7 @@ export interface BillAmendment extends ShortBillId {
 }
 export interface Bill extends BillInfo {
   year: number;
-  amendmentVersions: {
-    items: string[];
-    size: number;
-  };
+  amendmentVersions: Items<string>;
   amendments: {
     items: {
       [key: string]: BillAmendment;
@@ -120,18 +112,9 @@ export interface Bill extends BillInfo {
     size: number;
   };
   approvalMessage: string | null;
-  additionalSponsors: {
-    items: SessionMember[];
-    size: number;
-  };
-  pastCommittees: {
-    items: Committee[];
-    size: number;
-  };
-  previousVersions: {
-    items: BillId[];
-    size: number;
-  };
+  additionalSponsors: Items<SessionMember>;
+  pastCommittees: Items<Committee>;
+  previousVersions: Items<BillId>;
   committeeAgendas: {
     items: []; //TODO: complete after doing committees
     size: number;
